@@ -11,6 +11,9 @@ public:
     // TODO (intentional abstract-class exercise): Score declares two pure
     // virtual functions. Declare and then define the overrides that make
     // TieBreakerScore concrete.
+
+    bool haveAWinner() const override;
+    void print() const override;
 };
 
 #endif
