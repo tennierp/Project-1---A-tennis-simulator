@@ -13,16 +13,23 @@ SetScore::~SetScore()
     delete tieScore;
 }
 
+// When a player has 6 or more points leading the opponent by 2, they will win
+// Otherwise they will play a TieBreaker to reach 7 and one player will one with 7 points
 bool SetScore::haveAWinner() const
 {
     // TODO: Implement the ordinary set rule and the completed tie-break case.
-    return false;
+    if ((p1Score >= 6 || p2Score >= 6) && std::abs(p1Score - p2Score) >= 2) {
+        return true;
+    }
+
+    return p1Score >= 7 || p2Score >= 7;
 }
 
+// If both players have a score of 6, a tiebreak must be played
 bool SetScore::shouldPlayATieBreaker() const
 {
     // TODO: A tie-break is played when both players have won six games.
-    return false;
+    return p1Score == 6 && p2Score == 6;
 }
 
 void SetScore::addTieScore(Score *score)

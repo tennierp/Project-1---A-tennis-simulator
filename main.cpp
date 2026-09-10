@@ -5,6 +5,7 @@
 #include "Game.hpp"
 #include "Player.hpp"
 #include "Score.hpp"
+#include "TieBreaker.hpp"
 
 namespace {
 
@@ -55,9 +56,15 @@ int main()
 
     // Diagnostic starter: this completed vertical slice shows how a
     // Competition returns a polymorphic Score and how ownership is released.
-    std::cout << "\nDiagnostic run: Game::play followed by GameScore::print\n";
-    Game game(&playerA, &playerB);
-    Score *score = game.play(&playerA);
+    // std::cout << "\nDiagnostic run: Game::play followed by GameScore::print\n";
+    // Game game(&playerA, &playerB);
+    // Score *score = game.play(&playerA);
+    // score->print();
+    // delete score;
+
+    std::cout << "\nDiagnostic run: TieBreaker::play followed by GameScore::print\n";
+    TieBreaker tieBreaker(&playerA, &playerB);
+    Score *score = tieBreaker.play(&playerA);
     score->print();
     delete score;
 
