@@ -9,11 +9,10 @@ TieBreaker::TieBreaker(Player *player1, Player *player2)
 {
 }
 
+// Play points in the required service order until TieBreakerScore
+// reports a winner. Return an owning pointer to that score.
 Score *TieBreaker::play(Player *firstServer)
 {
-    // TODO: Play points in the required service order until TieBreakerScore
-    // reports a winner. Return an owning pointer to that score.
-
     // Create a tieBreakerScore with a server and opponent
     TieBreakerScore *tieBreakerScore = new TieBreakerScore(player1(), player2());
     Player *server = firstServer;

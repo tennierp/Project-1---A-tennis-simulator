@@ -1,6 +1,4 @@
 #include "GameScore.hpp"
-
-#include <cstdlib>
 #include <iostream>
 
 GameScore::GameScore(Player *player1, Player *player2)

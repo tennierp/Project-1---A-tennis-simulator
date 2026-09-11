@@ -1,8 +1,5 @@
 #include "Competition.hpp"
-
 #include <stdexcept>
-
-#include "Player.hpp"
 
 Competition::Competition(Player *player1, Player *player2)
     : p1(player1), p2(player2)

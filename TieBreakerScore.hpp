@@ -8,10 +8,7 @@ class TieBreakerScore : public Score {
 public:
     TieBreakerScore(Player *player1, Player *player2);
 
-    // TODO (intentional abstract-class exercise): Score declares two pure
-    // virtual functions. Declare and then define the overrides that make
-    // TieBreakerScore concrete.
-
+    // Override Scores two pure virtual functions to make TieBreakerScore have its own
     bool haveAWinner() const override;
     void print() const override;
 };

@@ -8,13 +8,10 @@ Set::Set(Player *player1, Player *player2)
 {
 }
 
-// games keep track of points, sets keep track of games
+// Games keep track of points, sets keep track of games
+// Repeatedly use Game, alternating the servers until there is a winner. If score reaches 6-6, use TieBreaker.
 Score *Set::play(Player *firstServer)
 {
-    // TODO: Repeatedly use Game, alternating the server after every game.
-    // If the score reaches 6-6, use TieBreaker and transfer ownership of its
-    // returned score to SetScore. Return an owning SetScore pointer.
-    
     Player *server = firstServer;
     SetScore *setScore = new SetScore(player1(), player2());
 

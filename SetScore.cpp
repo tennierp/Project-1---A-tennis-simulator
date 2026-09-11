@@ -18,7 +18,6 @@ SetScore::~SetScore()
 // Otherwise they will play a TieBreaker to reach 7 and one player will one with 7 points
 bool SetScore::haveAWinner() const
 {
-    // TODO: Implement the ordinary set rule and the completed tie-break case.
     if ((p1Score >= 6 || p2Score >= 6) && std::abs(p1Score - p2Score) >= 2) {
         return true;
     }
@@ -26,10 +25,9 @@ bool SetScore::haveAWinner() const
     return p1Score >= 7 || p2Score >= 7;
 }
 
-// If both players have a score of 6, a tiebreak must be played
+// If both players have a score of 6, a tiebreak has to be played
 bool SetScore::shouldPlayATieBreaker() const
 {
-    // TODO: A tie-break is played when both players have won six games.
     return p1Score == 6 && p2Score == 6;
 }
 
@@ -49,15 +47,6 @@ void SetScore::addTieScore(Score *score)
 
 void SetScore::print() const
 {
-    // // Diagnostic output: useful while tracing the starter's call sequence.
-    // std::cout << "SetScore::print begins\n"
-    //           << "Player A games = " << player1Score() << '\n'
-    //           << "Player B games = " << player2Score() << '\n';
-    // if (tieScore != nullptr) {
-    //     tieScore->print();
-    // }
-    // std::cout << "SetScore::print ends\n";
-
     std::cout << std::setw(10) << player1Score() << std::setw(18) << player2Score();
 
     if (tieScore != nullptr) {
@@ -65,5 +54,4 @@ void SetScore::print() const
     }
 
     std::cout << "\n";
-    // tieScore->print();
 }

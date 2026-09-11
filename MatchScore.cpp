@@ -16,17 +16,16 @@ MatchScore::~MatchScore()
     }
 }
 
+// A match ends when either player has won three sets.
 bool MatchScore::haveAWinner() const
 {
-    // TODO: A match ends when either player has won three sets.
     return p1Score == 3 || p2Score == 3;
 }
 
+// Validate score and capacity, record its winner, store score, and
+// transfer ownership to this MatchScore only after validation succeeds.
 void MatchScore::addSetScore(Score *score)
 {
-    // TODO: Validate score and capacity, record its winner, store score, and
-    // transfer ownership to this MatchScore only after validation succeeds.
-
     if (score == nullptr) {
         throw std::invalid_argument("The match score must not be null.");
     }

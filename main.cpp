@@ -1,12 +1,7 @@
-#include <cstdlib>
 #include <iostream>
 #include <limits>
-
-#include "Game.hpp"
 #include "Player.hpp"
 #include "Score.hpp"
-#include "TieBreaker.hpp"
-#include "Set.hpp"
 #include "Match.hpp"
 
 namespace {
@@ -56,31 +51,7 @@ int main()
     Player playerA(playerAProbability);
     Player playerB(playerBProbability);
 
-    // Diagnostic starter: this completed vertical slice shows how a
-    // Competition returns a polymorphic Score and how ownership is released.
-
-    // std::cout << "\nDiagnostic run: Game::play followed by GameScore::print\n";
-    // Game game(&playerA, &playerB);
-    // Score *score = game.play(&playerA);
-    // score->print();
-    // delete score;
-
-    // std::cout << "\nDiagnostic run: TieBreaker::play followed by TieBreakerScore::print\n";
-    // TieBreaker tieBreaker(&playerA, &playerB);
-    // Score *score = tieBreaker.play(&playerA);
-    // score->print();
-    // delete score;
-
-    // std::cout << "\nDiagnostic run: Set::play followed by SetScore::print\n";
-    // Set set(&playerA, &playerB);
-    // Score *score = set.play(&playerA);
-    // score->print();
-    // delete score;
-
-    // TODO: Replace the diagnostic Game with a Match, play the entire match,
-    // and print the transcript required by the project specification.
-
-    // std::cout << "\nDiagnostic run: Match::play followed by MatchScore::print\n";
+    // Plays an entire match and prints the transcript that shows how the match was played
     Match match(&playerA, &playerB);
     Score *score = match.play(&playerA);
     score->print();
