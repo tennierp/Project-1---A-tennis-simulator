@@ -7,6 +7,7 @@
 #include "Score.hpp"
 #include "TieBreaker.hpp"
 #include "Set.hpp"
+#include "Match.hpp"
 
 namespace {
 
@@ -70,14 +71,20 @@ int main()
     // score->print();
     // delete score;
 
-    std::cout << "\nDiagnostic run: Set::play followed by SetScore::print\n";
-    Set set(&playerA, &playerB);
-    Score *score = set.play(&playerA);
-    score->print();
-    delete score;
+    // std::cout << "\nDiagnostic run: Set::play followed by SetScore::print\n";
+    // Set set(&playerA, &playerB);
+    // Score *score = set.play(&playerA);
+    // score->print();
+    // delete score;
 
     // TODO: Replace the diagnostic Game with a Match, play the entire match,
     // and print the transcript required by the project specification.
+
+    // std::cout << "\nDiagnostic run: Match::play followed by MatchScore::print\n";
+    Match match(&playerA, &playerB);
+    Score *score = match.play(&playerA);
+    score->print();
+    delete score;
 
     return 0;
 }

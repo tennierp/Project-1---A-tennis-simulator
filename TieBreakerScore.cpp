@@ -2,6 +2,7 @@
 
 #include <complex>
 #include <iostream>
+#include <iomanip>
 
 TieBreakerScore::TieBreakerScore(Player *player1, Player *player2)
     : Score(player1, player2)
@@ -17,8 +18,10 @@ bool TieBreakerScore::haveAWinner() const {
 
 // Print the TieBreakerScore player1Score and player2Score while using the TieBreakerScore's print()
 void TieBreakerScore::print() const {
-    std::cout << "TieBreakerScore::print begins\n"
-              << "Player A score = " << player1Score() << '\n'
-              << "Player B score = " << player2Score() << '\n'
-              << "TieBreakerScore::print ends\n";
+    // std::cout << "TieBreakerScore::print begins\n"
+    //           << "Player A score = " << player1Score() << '\n'
+    //           << "Player B score = " << player2Score() << '\n'
+    //           << "TieBreakerScore::print ends\n";
+
+    std::cout << std::setw(16) << "(tie breaker  " << p1Score << '-' << p2Score << ')';
 }

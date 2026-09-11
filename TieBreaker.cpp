@@ -25,6 +25,7 @@ Score *TieBreaker::play(Player *firstServer)
         PointScore pointScore(player1(), player2());
         pointScore.addScore(server->serveAPoint(opponent));
         tieBreakerScore->addScore(pointScore.getWinner());
+
         currentServersTurns++;
 
         if (currentServersTurns == 2) {

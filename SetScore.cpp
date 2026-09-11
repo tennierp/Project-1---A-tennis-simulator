@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <iomanip>
 
 SetScore::SetScore(Player *player1, Player *player2)
     : Score(player1, player2), tieScore(nullptr)
@@ -48,12 +49,21 @@ void SetScore::addTieScore(Score *score)
 
 void SetScore::print() const
 {
-    // Diagnostic output: useful while tracing the starter's call sequence.
-    std::cout << "SetScore::print begins\n"
-              << "Player A games = " << player1Score() << '\n'
-              << "Player B games = " << player2Score() << '\n';
+    // // Diagnostic output: useful while tracing the starter's call sequence.
+    // std::cout << "SetScore::print begins\n"
+    //           << "Player A games = " << player1Score() << '\n'
+    //           << "Player B games = " << player2Score() << '\n';
+    // if (tieScore != nullptr) {
+    //     tieScore->print();
+    // }
+    // std::cout << "SetScore::print ends\n";
+
+    std::cout << std::setw(10) << player1Score() << std::setw(18) << player2Score();
+
     if (tieScore != nullptr) {
         tieScore->print();
     }
-    std::cout << "SetScore::print ends\n";
+
+    std::cout << "\n";
+    // tieScore->print();
 }
